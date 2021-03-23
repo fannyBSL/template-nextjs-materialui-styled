@@ -1,26 +1,12 @@
-import Head from 'next/head'
+import React from "react";
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-          <img src="/logo.svg" alt="Logo" />
-          <p>
-          Get started by editing.
-        </p>
-      </main>
-
-      <footer>
-          © 2021 BlueSky Digital Labs
-      </footer>
+        <h1>Next.js + Styling Template </h1>
+        <img src="/assets/logo.svg" alt="Logo" width="200px"/>
+        <p> Have fun to edit! </p>
     </div>
+
   )
 }
