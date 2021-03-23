@@ -15,8 +15,8 @@ html, body, #__next { height: 100%; overflow-y: auto !important; overflow-x: hid
   display: flex!important;
   flex-direction: column!important;
 }
-.main{ flex: 1 0 auto!important; }
-.footer { flex-shrink: 0; }
+main{ flex: 1 0 auto!important; }
+footer { flex-shrink: 0; }
 
 /*** general reset ***/
 a{ text-decoration:none; color:inherit; cursor:pointer; }
