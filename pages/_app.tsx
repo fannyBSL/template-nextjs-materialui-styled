@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head'
-import { ThemeProvider } from '@material-ui/styles';
+import { ThemeProvider } from '../public/theme/';
 import {Router} from "next/router";
-import { useEffect } from "react";
 import {darkTheme as theme} from "../public/theme/"
+import { AppProps } from 'next/app'
+
 
 import { TopBar } from '../components/TopBar'
 import { Footer } from '../components/Footer'
 
 import '../public/styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-  // Remove the server-side injected CSS.
+const MyApp = ({ Component, pageProps }: AppProps): React.ReactNode => {
+  //handle ScrollToTop behaviour when changing page with Router
   useEffect(() => {
     Router.events.on('routeChangeComplete', () => {
       const nextEl = document.getElementById("__next")
@@ -20,7 +21,7 @@ function MyApp({ Component, pageProps }) {
       }
       console.log('SCROLL')
     });
-
+    // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side')
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles)
@@ -51,7 +52,8 @@ function MyApp({ Component, pageProps }) {
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
     </Head>
-    <ThemeProvider theme={theme}>
+    {/* Call the Theme Provider defined in Theme folder to overwrite the one from Material-ui and enable the theme toggling */}
+    <ThemeProvider>
       <main >
           <TopBar />
           <Component {...pageProps} />

@@ -14,34 +14,39 @@ import { Tooltip } from '@material-ui/core'
 export const TopBar = (): ReactElement => {
     const { toggleTheme, isDark } = useContext(ToggleThemeContext)
    return (
-        <AppBar position="sticky">
-            <Toolbar>
-                <Link href="/">
-                    <a>
-                        <img
-                            src="../assets/logo.svg"
-                            height="25px"
-                            alt="BlueSky Digital Labs"
-                            style={{ paddingRight: 10, verticalAlign: 'bottom' }}
-                        />
-                    </a>
-                </Link>
-                <Link href="/">
-                    <a>
-                        <Typography variant="h6" style={!isDark ? { color: '#fff' } : {}}>
-                            Site Name
-                        </Typography>
-                    </a>
-                </Link>
-                <div>
-                    <Tooltip title="Toggle Theme">
-                        <Button variant="text" color="inherit" onClick={toggleTheme}>
-                            {isDark ? <SunIcon /> : <MoonIcon />}
-                        </Button>
-                    </Tooltip>
-                </div>
-            </Toolbar>
-        </AppBar>
+       <ToggleThemeContext.Consumer>
+           {render => (
+               <AppBar position="sticky" >
+                   <Toolbar>
+                       <Link href="/">
+                           <a>
+                               <img
+                                   src="../assets/logo.svg"
+                                   height="25px"
+                                   alt="BlueSky Digital Labs"
+                                   style={{ paddingRight: 10, verticalAlign: 'bottom' }}
+                               />
+                           </a>
+                       </Link>
+                       <Link href="/">
+                           <a>
+                               <Typography variant="h6" style={!isDark ? { color: '#00156a' } : {}}>
+                                   Site Name
+                               </Typography>
+                           </a>
+                       </Link>
+                       <div>
+                           <Tooltip title="Toggle Theme">
+                               <Button variant="text" color="inherit" onClick={toggleTheme}>
+                                   {isDark ? <SunIcon /> : <MoonIcon />}
+                               </Button>
+                           </Tooltip>
+                       </div>
+                   </Toolbar>
+               </AppBar>
+           ) }
+
+       </ToggleThemeContext.Consumer>
     )
 }
 
