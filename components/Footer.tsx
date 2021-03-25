@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import {Box, Typography} from '@material-ui/core'
+import {Typography} from '@material-ui/core'
 
 export const Footer: FC = ({}): ReactElement => {
     return (

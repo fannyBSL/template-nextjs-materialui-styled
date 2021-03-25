@@ -5,7 +5,7 @@ import MoonIcon from '@material-ui/icons/Brightness2Outlined'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import AppBar from '@material-ui/core/AppBar'
-import { ToggleThemeContext } from '../public/theme/'
+import { ToggleThemeContext } from '../components/theme/'
 import Link from 'next/link'
 import { Tooltip } from '@material-ui/core'
 
@@ -21,7 +21,7 @@ export const TopBar = (): ReactElement => {
                        <Link href="/">
                            <a>
                                <img
-                                   src="../assets/logo.svg"
+                                   src={!isDark? "../assets/logoDark.svg" : "../assets/logo.svg"}
                                    height="25px"
                                    alt="BlueSky Digital Labs"
                                    style={{ paddingRight: 10, verticalAlign: 'bottom' }}

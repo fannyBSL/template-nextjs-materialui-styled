@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head'
-import { ThemeProvider } from '../public/theme/';
+import { ThemeProvider } from '../components/theme/';
 import {Router} from "next/router";
-import {darkTheme as theme} from "../public/theme/"
+import {darkTheme as theme} from "../components/theme/"
 import { AppProps } from 'next/app'
 
 
